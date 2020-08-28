@@ -5,6 +5,8 @@ function Pizza(size, toppings) {
 }
 
 Pizza.prototype.sizeCost = function(size) {
+  let sizeCost = 0
+  let toppingCost = this.toppings.length
   if (this.size === "Small") {
     this.sizeCost = 10;
   } else if (this.size === "Medium") {
@@ -12,20 +14,25 @@ Pizza.prototype.sizeCost = function(size) {
   } else {
     this.sizeCost = 20
   }
-  return this.totalCost += this.sizeCost
+  return toppingCost += sizeCost
 }
 
-Pizza.prototype.toppingCost = function() {
-  return toppingsArray.length; // cost of toppings is the length of the array because each topping is $1
-} 
+
+
+// Pizza.prototype.toppingCost = function() {
+//   return toppingsArray.length; // cost of toppings is the length of the array because each topping is $1
+// } 
 
 function toppings() {
   let toppingsArray = []
   $("input:checkbox[name=toppings]:checked").each(function() {
     toppingsArray[i] = ($(this).val()) //[i] because i want the value to be the length of the index count?
   })
-  return toppingsArray
+  return toppingsArray 
 }
+
+let dingus = new Pizza
+console.log(dingus.toppingsArray)
 
 
 
@@ -34,8 +41,10 @@ function toppings() {
 $(document).ready(function(){
   $("#pizzaForm").submit(function(event){
     event.preventDefault();
-    $("#")
-
+    let pizza = new Pizza (size, toppings)
+    let totalCost = pizza.sizeCost()
+    $("#checkout").text();
+    $("#checkout").show();
   })
 
 })
