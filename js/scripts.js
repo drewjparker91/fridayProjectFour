@@ -4,32 +4,20 @@ function Pizza(size, toppings) {
   this.toppings = toppings;
 }
 
-Pizza.prototype.getPrice = function(size) {
+Pizza.prototype.getPrice = function() {
+  // console.log(this.size)
   let sizeCost = 0
   let toppingCost = this.toppings.length
   if (this.size === "Small") {
-    this.sizeCost = 10;
+    sizeCost = 10;
   } else if (this.size === "Medium") {
-    this.sizeCost = 15
+    sizeCost = 15;
   } else {
-    this.sizeCost = 20
+    sizeCost = 20;
   }
+  // console.log(toppingCost)
   return toppingCost += sizeCost
 }
-
-// Pizza.prototype.toppingCost = function() {
-//   return toppingsArray.length; // cost of toppings is the length of the array because each topping is $1
-// } 
-
-// function toppings() {
-//   let toppingsArray = [];
-//   $("input:checkbox[name=toppings]:checked").each(function() {
-//     toppingsArray[i] = ($(this).val()); //[i] because i want the value to be the length of the index count?
-//   })
-//   return toppingsArray; 
-// }
-
-
 
 
 
@@ -38,25 +26,29 @@ $(document).ready(function(){
   $("#pizzaForm").submit(function(event){
     event.preventDefault();
     let toppingsArray = [];
-    console.log("dfddf")
+    // console.log("dfddf")
     $("input:checkbox[name=toppings]:checked").each(function(i) {
-      toppingsArray[i] = ($(this).val()); //[i] because i want the value to be the length of the index count?
-      console.log("hi")
+      toppingsArray[i] = $(this).val(); //[i] because i want the value to be the length of the index count?
+      // console.log("hi")
     })
 
+    let size = $("#size").val();
+    console.log(size);
 
-    let check = $("#size").val();
-    console.log(check);
+    // let check = $("#size").val();
+    // console.log(check);
 
-    console.log(toppingsArray);
+    // console.log(toppingsArray);
 
 
     let pizza = new Pizza (size, toppingsArray);
-    let totalCost = pizza.sizeCost();
-    $("#checkout").text();
+    let totalCost = pizza.getPrice();
+
+    console.log(totalCost);
+
+    $("#price").text(totalCost);
     $("#checkout").show();
   })
-
 })
 
 // gather size input
@@ -73,6 +65,20 @@ $(document).ready(function(){
 
 
 // function toppingsArray()
+
+
+// Pizza.prototype.toppingCost = function() {
+//   return toppingsArray.length; // cost of toppings is the length of the array because each topping is $1
+// } 
+
+// function toppings() {
+//   let toppingsArray = [];
+//   $("input:checkbox[name=toppings]:checked").each(function() {
+//     toppingsArray[i] = ($(this).val()); //[i] because i want the value to be the length of the index count?
+//   })
+//   return toppingsArray; 
+// }
+
 
 
 
