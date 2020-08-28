@@ -1,3 +1,5 @@
+alert("hello")
+
 //BUSINESS LOGIC
 function Pizza(size, toppings) {
   this.size = size;
@@ -15,6 +17,14 @@ Pizza.prototype.sizeCost = function(size) {
   return this.totalCost += this.sizeCost
 }
 
+Pizza.prototype.toppingCost = fuction() {
+  let numTopping = this.toppings.length;
+  if(this.toppings.length !== 0){
+  return numTopping;
+  } else {
+    alert ("If you want a cheese pizza go to Chuck-E-Cheese, pick some toppings.")
+  }
+}
 
 function toppings(){
   let pizzaToppings = []
@@ -45,7 +55,7 @@ $(document).ready(function(){
 
 
 
-totalCost === this.toppings += this.size
+// totalCost === this.toppings += this.size
 
 
 // Pizza.prototype.toppingCost = 
