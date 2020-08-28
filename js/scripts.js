@@ -1,9 +1,7 @@
-alert("hello")
-
 //BUSINESS LOGIC
 function Pizza(size, toppings) {
   this.size = size;
-  this.toppings = [];
+  this.toppings = toppings;
 }
 
 Pizza.prototype.sizeCost = function(size) {
@@ -18,17 +16,15 @@ Pizza.prototype.sizeCost = function(size) {
 }
 
 Pizza.prototype.toppingCost = function() {
-  return this.toppings.length;
+  return toppingsArray.length; // cost of toppings is the length of the array because each topping is $1
 } 
 
-
-Pizza.prototype.totalCost
-
-function toppings(){
-  $("input:checkbox[name=toppings]:checked").each(function(i){
-    pizzaToppings[i] = $(this).val();
+function toppings() {
+  let toppingsArray = []
+  $("input:checkbox[name=toppings]:checked").each(function() {
+    toppingsArray[i] = ($(this).val()) //[i] because i want the value to be the length of the index count?
   })
-  return pizzaToppings
+  return toppingsArray
 }
 
 
@@ -54,12 +50,20 @@ $(document).ready(function(){
 
 // function toppingsArray()
 
-// Pizza.prototype.toppingsArray = function(toppings) {
-//   let pizzaToppings=[]
-//   $("input:checkbox[name=topping]:checked").each(function(i) {
-//     pizzaToppings[i] = $(this).val();
-//   })
-// }
+
+
+
+
+
+// gather size input
+//gather price of size input
+//gather topping input
+//gather price of topping input
+//Add sizeCost and toppingCost to get totalCost
+
+
+
+
 
 // Pizza.prototype.totalCost = function() {
 //   let totalCost = 0;
