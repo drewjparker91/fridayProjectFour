@@ -17,8 +17,6 @@ Pizza.prototype.getPrice = function(size) {
   return toppingCost += sizeCost
 }
 
-let mypizza = new Pizza
-
 // Pizza.prototype.toppingCost = function() {
 //   return toppingsArray.length; // cost of toppings is the length of the array because each topping is $1
 // } 
@@ -45,11 +43,18 @@ $(document).ready(function(){
       toppingsArray[i] = ($(this).val()); //[i] because i want the value to be the length of the index count?
       console.log("hi")
     })
+
+
+    let check = $("#size").val();
+    console.log(check);
+
     console.log(toppingsArray);
-    // let pizza = new Pizza (size, toppings)
-    // let totalCost = pizza.sizeCost()
-    // $("#checkout").text();
-    // $("#checkout").show();
+
+
+    let pizza = new Pizza (size, toppingsArray);
+    let totalCost = pizza.sizeCost();
+    $("#checkout").text();
+    $("#checkout").show();
   })
 
 })
