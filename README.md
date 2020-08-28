@@ -6,7 +6,7 @@
 
 ## Description
 
-_The purpose of this application is to feature what I have learned in the ._
+_This page allows users to build their own pizzas. The user will first select the size of pizza they want (small medium or large), and then toppings they would like on their pizza. The project uses a prototype method on a Pizza object to calculate the price of the pizza that the user built, and then the total cost is displayed on the screen._
 
 ## Setup/Installation Requirements
 
@@ -17,27 +17,16 @@ _The purpose of this application is to feature what I have learned in the ._
 
 ## Specs
 
-* Spec: 
-	expected input:
-	expected output:
-* Spec: 
-	expected input:
-	expected output: 
-* Spec:
-	expected input:
-	expected output:
-* Spec:
-	expected input:
-	expected output:
-* Spec:
-	expected input:
-	expected output:
-* Spec: 
-	expected input:
-	expected output:
-* Spec:
-	expected input:
-	expected output:
+* Spec: Small pizza cost $10, Medium pizza cost $15, Large pizza cost $20
+	expected input: medium
+	expected output: $15
+* Spec: All toppings are $1
+	expected input: 3 selected toppings
+	expected output: $3
+* Spec:Size Cost and Topping costs will be added together after "Continue" button is pressed.
+	expected input: Small pizza and 3 toppings
+	expected output: $13
+
 
 ## Known Bugs
 
@@ -55,6 +44,8 @@ _If you run into any questions, comments, or concerns, please reach out to Drew 
 * Bootstrap
 * Javascript
 * jQuery
+* W3Schools
+* Stack Overflow
 
 ### License
 
