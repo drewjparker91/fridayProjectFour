@@ -17,8 +17,6 @@ Pizza.prototype.getPrice = function() {
   return toppingCost += sizeCost
 }
 
-
-
 //USER LOGIC
 $(document).ready(function(){
   $("#pizzaForm").submit(function(event){
