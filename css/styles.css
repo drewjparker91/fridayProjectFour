@@ -1,3 +1,16 @@
 #checkout {
   display:none
 }
+
+.jumbotron {
+  background-image: url(https://thumbs.dreamstime.com/b/pizza-pattern-drawing-background-junk-food-seamless-hand-drawn-wrapping-decoration-print-pizza-pattern-drawing-background-151935075.jpg);
+  color:black;
+  text-align: center;
+}
+
+h1 {
+  background-color: white;
+}
+.body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
