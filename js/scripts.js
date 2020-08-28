@@ -17,28 +17,19 @@ Pizza.prototype.sizeCost = function(size) {
   return this.totalCost += this.sizeCost
 }
 
-Pizza.prototype.toppingCost = fuction() {
-  let numTopping = this.toppings.length;
-  if(this.toppings.length !== 0){
-  return numTopping;
-  } else {
-    alert ("If you want a cheese pizza go to Chuck-E-Cheese, pick some toppings.")
-  }
-}
+Pizza.prototype.toppingCost = function() {
+  return this.toppings.length;
+} 
+
+
+Pizza.prototype.totalCost
 
 function toppings(){
-  let pizzaToppings = []
   $("input:checkbox[name=toppings]:checked").each(function(i){
     pizzaToppings[i] = $(this).val();
   })
   return pizzaToppings
 }
-
-Pizza.prototype.totalToppings = function(){
-  this.toppings.forEach (function(){
-
-  })
-} 
 
 
 
