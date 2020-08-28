@@ -4,7 +4,7 @@ function Pizza(size, toppings) {
   this.toppings = toppings;
 }
 
-Pizza.prototype.sizeCost = function(size) {
+Pizza.prototype.getPrice = function(size) {
   let sizeCost = 0
   let toppingCost = this.toppings.length
   if (this.size === "Small") {
@@ -17,22 +17,20 @@ Pizza.prototype.sizeCost = function(size) {
   return toppingCost += sizeCost
 }
 
-
+let mypizza = new Pizza
 
 // Pizza.prototype.toppingCost = function() {
 //   return toppingsArray.length; // cost of toppings is the length of the array because each topping is $1
 // } 
 
-function toppings() {
-  let toppingsArray = []
-  $("input:checkbox[name=toppings]:checked").each(function() {
-    toppingsArray[i] = ($(this).val()) //[i] because i want the value to be the length of the index count?
-  })
-  return toppingsArray 
-}
+// function toppings() {
+//   let toppingsArray = [];
+//   $("input:checkbox[name=toppings]:checked").each(function() {
+//     toppingsArray[i] = ($(this).val()); //[i] because i want the value to be the length of the index count?
+//   })
+//   return toppingsArray; 
+// }
 
-let dingus = new Pizza
-console.log(dingus.toppingsArray)
 
 
 
@@ -41,14 +39,26 @@ console.log(dingus.toppingsArray)
 $(document).ready(function(){
   $("#pizzaForm").submit(function(event){
     event.preventDefault();
-    let pizza = new Pizza (size, toppings)
-    let totalCost = pizza.sizeCost()
-    $("#checkout").text();
-    $("#checkout").show();
+    let toppingsArray = [];
+    console.log("dfddf")
+    $("input:checkbox[name=toppings]:checked").each(function(i) {
+      toppingsArray[i] = ($(this).val()); //[i] because i want the value to be the length of the index count?
+      console.log("hi")
+    })
+    console.log(toppingsArray);
+    // let pizza = new Pizza (size, toppings)
+    // let totalCost = pizza.sizeCost()
+    // $("#checkout").text();
+    // $("#checkout").show();
   })
 
 })
 
+// gather size input
+//gather price of size input
+//gather topping input in an array
+//gather price of topping input
+//Add sizeCost and toppingCost to get totalCost
 
 
 // totalCost === this.toppings += this.size
@@ -64,11 +74,7 @@ $(document).ready(function(){
 
 
 
-// gather size input
-//gather price of size input
-//gather topping input
-//gather price of topping input
-//Add sizeCost and toppingCost to get totalCost
+
 
 
 
