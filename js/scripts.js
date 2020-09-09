@@ -2,19 +2,20 @@
 function Pizza(size, toppings) {
   this.size = size;
   this.toppings = toppings;
+  this.totalPrice = 0
 }
 
-Pizza.prototype.getPrice = function() {
+Pizza.prototype.setTotalPrice = function() {
   let sizeCost = 0
   let toppingCost = this.toppings.length
   if (this.size === "Small") {
     sizeCost = 10;
   } else if (this.size === "Medium") {
     sizeCost = 15;
-  } else {
-    sizeCost = 20;
+  } else if (this.size === "Large") {
+     sizeCost =20;
   }
-  return toppingCost += sizeCost
+  this.totalPrice = toppingCost + sizeCost
 }
 
 //USER LOGIC
@@ -23,25 +24,15 @@ $(document).ready(function(){
     event.preventDefault();
     let toppingsArray = [];
     $("input:checkbox[name=toppings]:checked").each(function(i) {
-      toppingsArray[i] = $(this).val(); //[i] because i want the value to be the length of the index count?
+      toppingsArray[i] = $(this).val();
     })
 
     let size = $("#size").val();
-    console.log(size);
-
 
     let pizza = new Pizza (size, toppingsArray);
-    let totalCost = pizza.getPrice();
+    pizza.setTotalPrice();
 
-    console.log(totalCost);
-
-    $("#price").text(totalCost);
+    $("#price").text(pizza.totalPrice);
     $("#checkout").show();
   })
 })
-
-// gather size input
-//gather price of size input
-//gather topping input in an array
-//gather price of topping input
-//Add sizeCost and toppingCost to get totalCost
